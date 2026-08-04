@@ -32,6 +32,9 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+# ...except the build-time public endpoint, which CI needs and which is
+# inlined into the client bundle anyway.
+!.env.production
 
 # vercel
 .vercel

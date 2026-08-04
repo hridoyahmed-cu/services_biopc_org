@@ -1,12 +1,16 @@
 {
-  "name": "site",
-  "version": "0.1.0",
+  "name": "biopc-services",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "assets": "npm run assets:figures && npm run assets:report && npm run assets:og",
+    "assets:figures": "node scripts/build-figures.mjs",
+    "assets:report": "node scripts/build-sample-report.mjs",
+    "assets:og": "node scripts/build-og.mjs"
   },
   "dependencies": {
     "next": "16.3.0",
@@ -20,6 +24,8 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.0",
+    "pdf-lib": "^1.17.1",
+    "sharp": "^0.35.3",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
