@@ -13,15 +13,15 @@ export default function RibbonBand({ className = "" }: { className?: string }) {
     >
       <defs>
         <linearGradient id="ribbon-a" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#38bdf8" stopOpacity="0" />
-          <stop offset="0.35" stopColor="#38bdf8" stopOpacity="0.75" />
-          <stop offset="0.7" stopColor="#4ade9a" stopOpacity="0.5" />
+          <stop stopColor="#1668c9" stopOpacity="0" />
+          <stop offset="0.35" stopColor="#1668c9" stopOpacity="0.75" />
+          <stop offset="0.7" stopColor="#15803d" stopOpacity="0.5" />
           <stop offset="1" stopColor="#2f7ff6" stopOpacity="0" />
         </linearGradient>
         <linearGradient id="ribbon-b" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
           <stop stopColor="#2f7ff6" stopOpacity="0" />
-          <stop offset="0.5" stopColor="#a9cdf5" stopOpacity="0.35" />
-          <stop offset="1" stopColor="#38bdf8" stopOpacity="0" />
+          <stop offset="0.5" stopColor="#4aa3f0" stopOpacity="0.35" />
+          <stop offset="1" stopColor="#1668c9" stopOpacity="0" />
         </linearGradient>
       </defs>
 
@@ -43,7 +43,7 @@ export default function RibbonBand({ className = "" }: { className?: string }) {
           cx={cx}
           cy={i % 2 ? 88 : 34}
           r="2.6"
-          fill="#38bdf8"
+          fill="#1668c9"
           opacity="0.55"
         />
       ))}

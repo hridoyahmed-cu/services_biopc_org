@@ -25,17 +25,22 @@ export default function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-[var(--hairline)] bg-[rgba(5,12,28,0.82)] backdrop-blur-xl"
+          ? "border-b border-[var(--hairline)] bg-[rgba(246,249,253,0.86)] backdrop-blur-xl"
           : "border-b border-transparent"
       }`}
     >
       <div className="shell flex h-[4.5rem] items-center justify-between gap-6">
         <a href="#top" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <span className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-[#3aa0ff] to-[#1b4fae] text-[13px] font-bold tracking-tight text-white shadow-lg shadow-[#1b4fae]/30">
-            BP
-          </span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/brand/logo.webp"
+            alt="BioPC"
+            width={40}
+            height={40}
+            className="h-10 w-10 shrink-0 rounded-full"
+          />
           <span className="leading-tight">
-            <span className="block text-[0.95rem] font-semibold tracking-tight text-white">
+            <span className="block text-[0.95rem] font-semibold tracking-tight text-[var(--fg)]">
               BioPC
             </span>
             <span className="block font-mono text-[0.6rem] uppercase tracking-[0.18em] text-muted">
@@ -49,7 +54,7 @@ export default function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="text-[0.875rem] text-[#c3d8f4] transition-colors hover:text-white"
+              className="text-[0.875rem] text-[var(--body)] transition-colors hover:text-[var(--accent-ink)]"
             >
               {item.label}
             </a>
@@ -58,14 +63,14 @@ export default function Header() {
 
         <div className="flex items-center gap-3">
           <a href="#quotation" className="btn btn-primary hidden sm:inline-flex">
-            Request a quotation
+            Request a MD Service
           </a>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
-            className="grid h-10 w-10 place-items-center rounded-lg border border-[var(--hairline)] text-white lg:hidden"
+            className="grid h-10 w-10 place-items-center rounded-lg border border-[var(--hairline)] text-[var(--fg)] lg:hidden"
           >
             <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.75">
               {open ? (
@@ -79,14 +84,14 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-[var(--hairline)] bg-[rgba(5,12,28,0.98)] backdrop-blur-xl lg:hidden">
+        <div className="border-t border-[var(--hairline)] bg-[rgba(255,255,255,0.99)] backdrop-blur-xl lg:hidden">
           <nav className="shell flex flex-col py-4">
             {NAV.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="border-b border-[var(--hairline)] py-3.5 text-[0.95rem] text-[#dce9fb] last:border-0"
+                className="border-b border-[var(--hairline)] py-3.5 text-[0.95rem] text-[var(--body)] last:border-0"
               >
                 {item.label}
               </a>
@@ -96,7 +101,7 @@ export default function Header() {
               onClick={() => setOpen(false)}
               className="btn btn-primary mt-4 w-full"
             >
-              Request a quotation
+              Request a MD Service
             </a>
             <a
               href={`mailto:${SITE.email}`}

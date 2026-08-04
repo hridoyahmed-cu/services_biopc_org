@@ -15,9 +15,9 @@ export default function ResearchAreas() {
         <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-[var(--hairline)] bg-[var(--hairline)] sm:grid-cols-2 lg:grid-cols-5">
           {RESEARCH_AREAS.map((area, i) => (
             <Reveal key={area.title} delay={(i % 5) * 70}>
-              <article className="group h-full bg-[#071228] p-6 transition-colors hover:bg-[#0c1c38]">
-                <span className="block h-px w-8 bg-[#38bdf8] transition-all duration-500 group-hover:w-14" />
-                <h3 className="mt-4 text-[0.9375rem] font-semibold leading-snug tracking-tight text-white">
+              <article className="group h-full bg-[var(--surface)] p-6 transition-colors hover:bg-[var(--surface-2)]">
+                <span className="block h-px w-8 bg-[var(--accent)] transition-all duration-500 group-hover:w-14" />
+                <h3 className="mt-4 text-[0.9375rem] font-semibold leading-snug tracking-tight text-[var(--fg)]">
                   {area.title}
                 </h3>
                 <p className="mt-2 text-[0.8125rem] leading-relaxed text-muted">

@@ -7,8 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "assets": "npm run assets:figures && npm run assets:report && npm run assets:og",
+    "assets": "npm run assets:brand && npm run assets:figures && npm run assets:video && npm run assets:report && npm run assets:og",
+    "assets:brand": "node scripts/build-brand.mjs",
     "assets:figures": "node scripts/build-figures.mjs",
+    "assets:video": "node scripts/build-hero-video.mjs",
     "assets:report": "node scripts/build-sample-report.mjs",
     "assets:og": "node scripts/build-og.mjs"
   },

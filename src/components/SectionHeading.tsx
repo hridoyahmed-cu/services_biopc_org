@@ -18,7 +18,7 @@ export default function SectionHeading({
   return (
     <Reveal className={centered ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
       <p className="eyebrow">{eyebrow}</p>
-      <h2 className="section-title mt-3 text-white">{title}</h2>
+      <h2 className="section-title mt-3 text-[var(--fg)]">{title}</h2>
       {lede ? (
         <p className={`lede mt-5 ${centered ? "mx-auto" : ""}`}>{lede}</p>
       ) : null}

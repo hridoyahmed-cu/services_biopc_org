@@ -5,19 +5,24 @@ const YEAR = 2026;
 
 export default function Footer() {
   return (
-    <footer className="relative mt-24 overflow-hidden border-t border-[var(--hairline)] bg-[#03070f]">
+    <footer className="relative mt-24 overflow-hidden border-t border-[var(--hairline)] bg-[var(--surface-2)]">
       <div
         className="glow-orb -top-24 left-1/4 h-72 w-72 opacity-40"
-        style={{ background: "radial-gradient(circle, #1d4ed8, transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, #93c5fd, transparent 70%)" }}
       />
       <div className="shell relative grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1.2fr]">
         <div>
           <div className="flex items-center gap-3">
-            <span className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-[#3aa0ff] to-[#1b4fae] text-sm font-bold text-white">
-              BP
-            </span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/brand/logo.webp"
+              alt="BioPC"
+              width={48}
+              height={48}
+              className="h-12 w-12 shrink-0 rounded-full"
+            />
             <div>
-              <p className="font-semibold tracking-tight text-white">BioPC</p>
+              <p className="font-semibold tracking-tight text-[var(--fg)]">BioPC</p>
               <p className="font-mono text-[0.6rem] uppercase tracking-[0.18em] text-muted">
                 MD Simulation Service
               </p>
@@ -28,7 +33,7 @@ export default function Footer() {
             students and drug discovery teams — from system setup through to
             manuscript-ready figures.
           </p>
-          <p className="mt-5 font-display text-lg italic text-[#a9cdf5]">
+          <p className="mt-5 font-display text-lg italic text-[var(--body)]">
             {SITE.tagline}
           </p>
         </div>
@@ -40,7 +45,7 @@ export default function Footer() {
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="text-[0.9375rem] text-[#c3d8f4] transition-colors hover:text-white"
+                  className="text-[0.9375rem] text-[var(--body)] transition-colors hover:text-[var(--accent-ink)]"
                 >
                   {item.label}
                 </a>
@@ -49,9 +54,9 @@ export default function Footer() {
             <li>
               <a
                 href="#quotation"
-                className="text-[0.9375rem] text-[#c3d8f4] transition-colors hover:text-white"
+                className="text-[0.9375rem] text-[var(--body)] transition-colors hover:text-[var(--accent-ink)]"
               >
-                Request a quotation
+                Request a MD Service
               </a>
             </li>
           </ul>
@@ -63,9 +68,9 @@ export default function Footer() {
             <li>
               <a
                 href={`tel:${SITE.phoneHref}`}
-                className="group flex items-center gap-3 text-[#c3d8f4] transition-colors hover:text-white"
+                className="group flex items-center gap-3 text-[var(--body)] transition-colors hover:text-[var(--accent-ink)]"
               >
-                <span className="h-4 w-4 shrink-0 text-[#38bdf8]">
+                <span className="h-4 w-4 shrink-0 text-[var(--accent)]">
                   <PhoneIcon />
                 </span>
                 {SITE.phone}
@@ -76,7 +81,7 @@ export default function Footer() {
                 href={whatsappLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-3 text-[#c3d8f4] transition-colors hover:text-white"
+                className="group flex items-center gap-3 text-[var(--body)] transition-colors hover:text-[var(--accent-ink)]"
               >
                 <span className="h-4 w-4 shrink-0 text-[#25D366]">
                   <WhatsAppIcon />
@@ -87,9 +92,9 @@ export default function Footer() {
             <li>
               <a
                 href={`mailto:${SITE.email}`}
-                className="group flex items-center gap-3 break-all text-[#c3d8f4] transition-colors hover:text-white"
+                className="group flex items-center gap-3 break-all text-[var(--body)] transition-colors hover:text-[var(--accent-ink)]"
               >
-                <span className="h-4 w-4 shrink-0 text-[#38bdf8]">
+                <span className="h-4 w-4 shrink-0 text-[var(--accent)]">
                   <MailIcon />
                 </span>
                 {SITE.email}
@@ -98,9 +103,9 @@ export default function Footer() {
             <li>
               <a
                 href={SITE.url}
-                className="group flex items-center gap-3 text-[#c3d8f4] transition-colors hover:text-white"
+                className="group flex items-center gap-3 text-[var(--body)] transition-colors hover:text-[var(--accent-ink)]"
               >
-                <span className="h-4 w-4 shrink-0 text-[#38bdf8]">
+                <span className="h-4 w-4 shrink-0 text-[var(--accent)]">
                   <GlobeIcon />
                 </span>
                 services.biopc.org
@@ -111,9 +116,9 @@ export default function Footer() {
                 href={SITE.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-3 text-[#c3d8f4] transition-colors hover:text-white"
+                className="group flex items-center gap-3 text-[var(--body)] transition-colors hover:text-[var(--accent-ink)]"
               >
-                <span className="h-4 w-4 shrink-0 text-[#38bdf8]">
+                <span className="h-4 w-4 shrink-0 text-[var(--accent)]">
                   <FacebookIcon />
                 </span>
                 BioPC Lab

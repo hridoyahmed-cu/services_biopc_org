@@ -235,7 +235,68 @@ export const PACKAGES = [
   },
 ] as const;
 
+/**
+ * Gallery order is deliberate: the most visually striking, full-colour figures
+ * lead, because the first row is what a visitor judges the service on. The
+ * single-trace line plots follow. Category filters preserve this ordering.
+ */
 export const GALLERY = [
+  {
+    slug: "dccm",
+    title: "Dynamic cross-correlation",
+    category: "Advanced",
+    caption:
+      "Cα dynamic cross-correlation matrix resolving correlated and anti-correlated domain motion across both chains.",
+  },
+  {
+    slug: "mmpbsa-hotspots",
+    title: "Energetic hot-spot residues",
+    category: "Energetics",
+    caption:
+      "Per-residue ΔG contributions ranked by magnitude, identifying the residues that dominate binding.",
+  },
+  {
+    slug: "fel",
+    title: "Free energy landscape",
+    category: "Advanced",
+    caption:
+      "Gibbs free energy landscape projected onto the first two principal components, with the global minimum annotated.",
+  },
+  {
+    slug: "dssp",
+    title: "DSSP secondary structure",
+    category: "Stability",
+    caption:
+      "Per-frame secondary structure content showing helix, sheet and coil populations remain conserved throughout.",
+  },
+  {
+    slug: "pca-scatter",
+    title: "Essential subspace",
+    category: "Advanced",
+    caption:
+      "PC1–PC2 projection coloured by simulation time, showing the transition between conformational basins.",
+  },
+  {
+    slug: "mmpbsa-components",
+    title: "MM/PBSA energy components",
+    category: "Energetics",
+    caption:
+      "Decomposed binding free energy under Generalised Born and Poisson–Boltzmann solvation, with standard errors.",
+  },
+  {
+    slug: "interface",
+    title: "Interface persistence",
+    category: "Interactions",
+    caption:
+      "Contacts within 0.6 nm and minimum inter-chain distance, demonstrating a stable, non-dissociating interface.",
+  },
+  {
+    slug: "rmsf",
+    title: "Per-residue RMSF",
+    category: "Stability",
+    caption:
+      "Backbone fluctuation per residue for both binding partners, resolving the flexible loops that drive interface breathing.",
+  },
   {
     slug: "rmsd",
     title: "Backbone RMSD",
@@ -244,11 +305,18 @@ export const GALLERY = [
       "Cα RMSD of the complex over the production trajectory, with the equilibrated plateau used for downstream analysis marked.",
   },
   {
-    slug: "rmsf",
-    title: "Per-residue RMSF",
-    category: "Stability",
+    slug: "hbonds",
+    title: "Hydrogen bond occupancy",
+    category: "Interactions",
     caption:
-      "Backbone fluctuation per residue for both binding partners, resolving the flexible loops that drive interface breathing.",
+      "Time-resolved hydrogen bond count at the interface with occupancy statistics for each persistent pair.",
+  },
+  {
+    slug: "pca-eigenvalues",
+    title: "PCA eigenvalue spectrum",
+    category: "Advanced",
+    caption:
+      "Eigenvalue decay and cumulative variance, confirming that the essential dynamics are captured by the leading modes.",
   },
   {
     slug: "gyration",
@@ -265,69 +333,6 @@ export const GALLERY = [
       "Total and interface SASA, quantifying how much surface is buried on complex formation.",
   },
   {
-    slug: "hbonds",
-    title: "Hydrogen bond occupancy",
-    category: "Interactions",
-    caption:
-      "Time-resolved hydrogen bond count at the interface with occupancy statistics for each persistent pair.",
-  },
-  {
-    slug: "interface",
-    title: "Interface persistence",
-    category: "Interactions",
-    caption:
-      "Contacts within 0.6 nm and minimum inter-chain distance, demonstrating a stable, non-dissociating interface.",
-  },
-  {
-    slug: "dssp",
-    title: "DSSP secondary structure",
-    category: "Stability",
-    caption:
-      "Per-frame secondary structure content showing helix, sheet and coil populations remain conserved throughout.",
-  },
-  {
-    slug: "dccm",
-    title: "Dynamic cross-correlation",
-    category: "Advanced",
-    caption:
-      "Cα dynamic cross-correlation matrix resolving correlated and anti-correlated domain motion across both chains.",
-  },
-  {
-    slug: "fel",
-    title: "Free energy landscape",
-    category: "Advanced",
-    caption:
-      "Gibbs free energy landscape projected onto the first two principal components, with the global minimum annotated.",
-  },
-  {
-    slug: "pca-scatter",
-    title: "Essential subspace",
-    category: "Advanced",
-    caption:
-      "PC1–PC2 projection coloured by simulation time, showing the transition between conformational basins.",
-  },
-  {
-    slug: "pca-eigenvalues",
-    title: "PCA eigenvalue spectrum",
-    category: "Advanced",
-    caption:
-      "Eigenvalue decay and cumulative variance, confirming that the essential dynamics are captured by the leading modes.",
-  },
-  {
-    slug: "mmpbsa-components",
-    title: "MM/PBSA energy components",
-    category: "Energetics",
-    caption:
-      "Decomposed binding free energy under Generalised Born and Poisson–Boltzmann solvation, with standard errors.",
-  },
-  {
-    slug: "mmpbsa-hotspots",
-    title: "Energetic hot-spot residues",
-    category: "Energetics",
-    caption:
-      "Per-residue ΔG contributions ranked by magnitude, identifying the residues that dominate binding.",
-  },
-  {
     slug: "mmpbsa-convergence-gb",
     title: "MM/GBSA convergence",
     category: "Energetics",
@@ -342,6 +347,10 @@ export const GALLERY = [
       "Equivalent convergence assessment under Poisson–Boltzmann solvation for the same trajectory.",
   },
 ] as const;
+
+/** Shown under the gallery and on every page of the sample report. */
+export const FIGURE_DISCLAIMER =
+  "These figures are shown as examples of deliverable quality only. They are not for commercial or research use. If you use any of these figures in your own research, your research will be falsified and retracted.";
 
 export const GALLERY_CATEGORIES = [
   "All",

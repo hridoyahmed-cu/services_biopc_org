@@ -144,13 +144,13 @@ export default function Quotation() {
     <section id="quotation" className="relative overflow-hidden py-20 md:py-28">
       <div
         className="glow-orb left-1/4 top-0 h-[30rem] w-[30rem] opacity-35"
-        style={{ background: "radial-gradient(circle, #1d4ed8, transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, #93c5fd, transparent 70%)" }}
         aria-hidden="true"
       />
 
       <div className="shell relative">
         <SectionHeading
-          eyebrow="Request a quotation"
+          eyebrow="Request a MD Service"
           title="Tell us about your system"
           lede="Send what you have — even just a PDB ID and a research question is enough to start. You will receive a written quotation with a simulation plan and a realistic timeline, usually within one working day."
           align="center"
@@ -162,12 +162,12 @@ export default function Quotation() {
             <div className="panel p-6 sm:p-8">
               {status === "sent" ? (
                 <div className="flex min-h-[28rem] flex-col items-center justify-center text-center">
-                  <span className="grid h-16 w-16 place-items-center rounded-full border border-[rgba(74,222,154,0.4)] bg-[rgba(74,222,154,0.1)] text-[#4ade9a]">
+                  <span className="grid h-16 w-16 place-items-center rounded-full border border-[rgba(21,128,61,0.4)] bg-[rgba(21,128,61,0.1)] text-[var(--helix)]">
                     <svg viewBox="0 0 24 24" className="h-8 w-8" fill="none" stroke="currentColor" strokeWidth="1.75">
                       <path d="m5 12.5 4.5 4.5L19 7.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </span>
-                  <h3 className="mt-6 font-display text-[1.6rem] text-white">
+                  <h3 className="mt-6 font-display text-[1.6rem] text-[var(--fg)]">
                     Request received
                   </h3>
                   <p className="lede mt-3 text-center text-[0.9375rem]">
@@ -202,7 +202,7 @@ export default function Quotation() {
                   <div className="grid gap-5 sm:grid-cols-2">
                     <div>
                       <label className="label" htmlFor="q-name">
-                        Name <span className="text-[#f0704f]">*</span>
+                        Name <span className="text-[var(--ember)]">*</span>
                       </label>
                       <input id="q-name" name="name" required className="field" placeholder="Dr. Jane Doe" autoComplete="name" />
                     </div>
@@ -214,7 +214,7 @@ export default function Quotation() {
                     </div>
                     <div>
                       <label className="label" htmlFor="q-email">
-                        Email <span className="text-[#f0704f]">*</span>
+                        Email <span className="text-[var(--ember)]">*</span>
                       </label>
                       <input id="q-email" name="email" type="email" required className="field" placeholder="you@university.edu" autoComplete="email" />
                     </div>
@@ -243,7 +243,7 @@ export default function Quotation() {
                         name="proteinFile"
                         type="file"
                         accept=".pdb,.cif,.ent,.gro"
-                        className="field file:mr-3 file:rounded-md file:border-0 file:bg-[rgba(56,189,248,0.14)] file:px-3 file:py-1.5 file:text-[0.8125rem] file:font-medium file:text-[#9fd5fb] hover:file:bg-[rgba(56,189,248,0.22)]"
+                        className="field file:mr-3 file:rounded-md file:border-0 file:bg-[rgba(22,104,201,0.14)] file:px-3 file:py-1.5 file:text-[0.8125rem] file:font-medium file:text-[var(--accent)] hover:file:bg-[rgba(22,104,201,0.22)]"
                       />
                     </div>
                     <div>
@@ -255,7 +255,7 @@ export default function Quotation() {
                         name="ligandFile"
                         type="file"
                         accept=".mol2,.sdf,.pdbqt,.pdb,.mol,.smi"
-                        className="field file:mr-3 file:rounded-md file:border-0 file:bg-[rgba(56,189,248,0.14)] file:px-3 file:py-1.5 file:text-[0.8125rem] file:font-medium file:text-[#9fd5fb] hover:file:bg-[rgba(56,189,248,0.22)]"
+                        className="field file:mr-3 file:rounded-md file:border-0 file:bg-[rgba(22,104,201,0.14)] file:px-3 file:py-1.5 file:text-[0.8125rem] file:font-medium file:text-[var(--accent)] hover:file:bg-[rgba(22,104,201,0.22)]"
                       />
                     </div>
                   </div>
@@ -274,7 +274,7 @@ export default function Quotation() {
                           Select a timescale
                         </option>
                         {SIM_LENGTHS.map((l) => (
-                          <option key={l} value={l} className="bg-[#071228]">
+                          <option key={l} value={l} className="bg-[var(--surface)]">
                             {l}
                           </option>
                         ))}
@@ -294,13 +294,13 @@ export default function Quotation() {
                       {ANALYSIS_OPTIONS.map((opt) => (
                         <label
                           key={opt}
-                          className="flex cursor-pointer items-start gap-2.5 rounded-lg border border-[var(--hairline)] bg-[rgba(3,9,22,0.45)] px-3 py-2.5 text-[0.8125rem] text-[#cddff5] transition-colors hover:border-[rgba(56,189,248,0.4)]"
+                          className="flex cursor-pointer items-start gap-2.5 rounded-lg border border-[var(--hairline)] bg-[var(--surface)] px-3 py-2.5 text-[0.8125rem] text-[var(--body)] transition-colors hover:border-[rgba(22,104,201,0.4)]"
                         >
                           <input
                             type="checkbox"
                             name="analysis"
                             value={opt}
-                            className="mt-0.5 h-4 w-4 shrink-0 accent-[#38bdf8]"
+                            className="mt-0.5 h-4 w-4 shrink-0 accent-[var(--accent)]"
                           />
                           <span className="leading-snug">{opt}</span>
                         </label>
@@ -324,7 +324,7 @@ export default function Quotation() {
                   {status === "error" && (
                     <p
                       role="alert"
-                      className="mt-5 rounded-lg border border-[rgba(240,112,79,0.4)] bg-[rgba(240,112,79,0.08)] px-4 py-3 text-[0.875rem] text-[#ffb9a4]"
+                      className="mt-5 rounded-lg border border-[rgba(194,65,12,0.4)] bg-[rgba(194,65,12,0.08)] px-4 py-3 text-[0.875rem] text-[var(--ember)]"
                     >
                       {error}
                     </p>
@@ -336,7 +336,7 @@ export default function Quotation() {
                       disabled={status === "sending"}
                       className="btn btn-primary flex-1 disabled:opacity-60"
                     >
-                      {status === "sending" ? "Sending…" : "Request a quotation"}
+                      {status === "sending" ? "Sending…" : "Request a MD Service"}
                       {status !== "sending" && (
                         <span className="h-4 w-4">
                           <ArrowIcon />
@@ -373,11 +373,11 @@ export default function Quotation() {
                 <p className="eyebrow">Direct contact</p>
                 <ul className="mt-5 space-y-4">
                   {[
-                    { Icon: PhoneIcon, label: "Phone", value: SITE.phone, href: `tel:${SITE.phoneHref}`, tint: "#38bdf8" },
+                    { Icon: PhoneIcon, label: "Phone", value: SITE.phone, href: `tel:${SITE.phoneHref}`, tint: "var(--accent)" },
                     { Icon: WhatsAppIcon, label: "WhatsApp", value: SITE.whatsapp, href: whatsappLink(), tint: "#25D366" },
-                    { Icon: MailIcon, label: "Email", value: SITE.email, href: `mailto:${SITE.email}`, tint: "#38bdf8" },
-                    { Icon: GlobeIcon, label: "Website", value: "services.biopc.org", href: SITE.url, tint: "#38bdf8" },
-                    { Icon: FacebookIcon, label: "Facebook", value: "BioPC Lab", href: SITE.facebook, tint: "#38bdf8" },
+                    { Icon: MailIcon, label: "Email", value: SITE.email, href: `mailto:${SITE.email}`, tint: "var(--accent)" },
+                    { Icon: GlobeIcon, label: "Website", value: "services.biopc.org", href: SITE.url, tint: "var(--accent)" },
+                    { Icon: FacebookIcon, label: "Facebook", value: "BioPC Lab", href: SITE.facebook, tint: "var(--accent)" },
                   ].map(({ Icon, label, value, href, tint }) => (
                     <li key={label}>
                       <a
@@ -387,7 +387,7 @@ export default function Quotation() {
                         className="group flex items-start gap-3.5"
                       >
                         <span
-                          className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-[var(--hairline)] bg-[rgba(255,255,255,0.03)] p-2 transition-colors group-hover:border-[rgba(56,189,248,0.4)]"
+                          className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-[var(--hairline)] bg-[var(--surface)] p-2 transition-colors group-hover:border-[rgba(22,104,201,0.4)]"
                           style={{ color: tint }}
                         >
                           <Icon />
@@ -396,7 +396,7 @@ export default function Quotation() {
                           <span className="block font-mono text-[0.65rem] uppercase tracking-[0.14em] text-muted">
                             {label}
                           </span>
-                          <span className="mt-0.5 block break-all text-[0.9375rem] text-[#dce9fb] transition-colors group-hover:text-white">
+                          <span className="mt-0.5 block break-all text-[0.9375rem] text-[var(--body)] transition-colors group-hover:text-[var(--accent-ink)]">
                             {value}
                           </span>
                         </span>
@@ -415,11 +415,11 @@ export default function Quotation() {
                     ["You approve, we run", "Nothing is charged until the plan and price are agreed."],
                   ].map(([title, body], i) => (
                     <li key={title} className="flex gap-3.5">
-                      <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border border-[rgba(56,189,248,0.4)] font-mono text-[0.65rem] text-[#5cc6fb]">
+                      <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border border-[rgba(22,104,201,0.4)] font-mono text-[0.65rem] text-[var(--accent)]">
                         {i + 1}
                       </span>
                       <span>
-                        <span className="block text-[0.9rem] font-medium text-white">
+                        <span className="block text-[0.9rem] font-medium text-[var(--fg)]">
                           {title}
                         </span>
                         <span className="mt-1 block text-[0.8125rem] leading-relaxed text-muted">

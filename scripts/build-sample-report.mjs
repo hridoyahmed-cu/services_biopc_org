@@ -199,7 +199,11 @@ function newPage() {
       thickness: 0.5,
       color: HAIR,
     });
-    // footer
+    // footer — disclaimer on every page, so a detached print still carries it
+    page.drawText(
+      "Not for commercial or research use. Reusing these figures in your own research will result in it being falsified and retracted.",
+      { x: M, y: 46, size: 6.6, font: italic, color: rgb(0.68, 0.24, 0.1) },
+    );
     page.drawText("services.biopc.org  ·  biopc.research@gmail.com", {
       x: M,
       y: 34,
@@ -228,7 +232,7 @@ cover.drawRectangle({ x: 0, y: A4.h - 6, width: A4.w, height: 6, color: ACCENT }
 for (let i = 0; i < 90; i++) {
   const t = i / 89;
   const x = M + t * (A4.w - 2 * M);
-  const y = 250 + Math.sin(t * Math.PI * 6) * 34;
+  const y = 300 + Math.sin(t * Math.PI * 6) * 30;
   cover.drawCircle({
     x,
     y,
@@ -279,11 +283,44 @@ const specs = [
   ["System", "~148,000 atoms, TIP3P, 0.15 M NaCl"],
   ["Energetics", "MM/PBSA + MM/GBSA, 500 frames"],
 ];
-y = 190;
+y = 232;
 for (const [k, v] of specs) {
   cover.drawText(k.toUpperCase(), { x: M, y, size: 7, font: bold, color: ACCENT });
   cover.drawText(v, { x: M + 90, y, size: 9, font: regular, color: rgb(0.86, 0.91, 0.98) });
   y -= 20;
+}
+
+// Usage restriction — boxed on the cover so it cannot be overlooked
+cover.drawRectangle({
+  x: M,
+  y: 100,
+  width: A4.w - 2 * M,
+  height: 60,
+  color: rgb(0.16, 0.05, 0.03),
+  borderColor: rgb(0.76, 0.29, 0.13),
+  borderWidth: 1,
+});
+cover.drawText("DISCLAIMER", {
+  x: M + 16,
+  y: 144,
+  size: 7.5,
+  font: bold,
+  color: rgb(0.95, 0.55, 0.36),
+});
+{
+  let dy = 130;
+  const text =
+    "This report and every figure in it are provided as a demonstration of deliverable quality only. They are not for commercial or research use. If you use any of these figures in your research, your research will be falsified and retracted.";
+  for (const line of wrap(text, regular, 8, A4.w - 2 * M - 32)) {
+    cover.drawText(line, {
+      x: M + 16,
+      y: dy,
+      size: 8,
+      font: regular,
+      color: rgb(0.98, 0.86, 0.8),
+    });
+    dy -= 11;
+  }
 }
 
 cover.drawLine({

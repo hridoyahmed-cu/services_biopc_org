@@ -20,7 +20,7 @@ export default function WhatsAppButton() {
       href={whatsappLink()}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Request a quotation on WhatsApp"
+      aria-label="Request an MD service on WhatsApp"
       className={`group fixed bottom-5 right-5 z-50 flex items-center gap-2.5 rounded-full bg-[#25D366] py-3 pl-3 pr-3 font-semibold text-[#04301a] shadow-[0_14px_38px_-10px_rgba(37,211,102,0.7)] transition-all duration-500 sm:bottom-7 sm:right-7 md:pr-5 ${
         visible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-6 opacity-0"
       }`}
@@ -30,7 +30,7 @@ export default function WhatsAppButton() {
         <WhatsAppIcon className="relative h-7 w-7" />
       </span>
       <span className="hidden text-[0.9rem] leading-none md:inline">
-        WhatsApp a quotation
+        WhatsApp an MD service
       </span>
     </a>
   );

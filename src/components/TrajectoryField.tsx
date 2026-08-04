@@ -75,7 +75,7 @@ export default function TrajectoryField({ className = "" }: { className?: string
           const d2 = dx * dx + dy * dy;
           if (d2 > LINK * LINK) continue;
           const d = Math.sqrt(d2);
-          ctx.strokeStyle = `rgba(120, 176, 240, ${(1 - d / LINK) * 0.14})`;
+          ctx.strokeStyle = `rgba(22, 104, 201, ${(1 - d / LINK) * 0.16})`;
           ctx.lineWidth = 0.7;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
@@ -85,7 +85,7 @@ export default function TrajectoryField({ className = "" }: { className?: string
       }
 
       for (const p of particles) {
-        ctx.fillStyle = "rgba(158, 204, 250, 0.42)";
+        ctx.fillStyle = "rgba(22, 104, 201, 0.30)";
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fill();

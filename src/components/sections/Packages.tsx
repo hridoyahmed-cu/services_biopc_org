@@ -18,12 +18,12 @@ export default function Packages() {
           <div className="mt-14 hidden overflow-hidden rounded-2xl border border-[var(--hairline)] md:block">
             <table className="w-full border-collapse text-left">
               <thead>
-                <tr className="bg-[#0a1830]">
+                <tr className="bg-[var(--surface-2)]">
                   {["Package", "Best for", "Typical output", ""].map((h) => (
                     <th
                       key={h}
                       scope="col"
-                      className="px-6 py-4 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-[#9fd5fb]"
+                      className="px-6 py-4 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-[var(--accent)]"
                     >
                       {h}
                     </th>
@@ -34,25 +34,25 @@ export default function Packages() {
                 {PACKAGES.map((p) => (
                   <tr
                     key={p.length}
-                    className={`border-t border-[var(--hairline)] transition-colors hover:bg-[#0a1830] ${
-                      p.accent ? "bg-[rgba(56,189,248,0.045)]" : ""
+                    className={`border-t border-[var(--hairline)] transition-colors hover:bg-[var(--surface-2)] ${
+                      p.accent ? "bg-[rgba(22,104,201,0.045)]" : ""
                     }`}
                   >
                     <th scope="row" className="px-6 py-6 align-top">
-                      <span className="font-display text-[1.5rem] font-normal text-white">
+                      <span className="font-display text-[1.5rem] font-normal text-[var(--fg)]">
                         {p.length}
                       </span>
                       {p.accent && (
-                        <span className="ml-2.5 rounded-full border border-[rgba(56,189,248,0.4)] bg-[rgba(56,189,248,0.1)] px-2 py-0.5 align-middle font-mono text-[0.6rem] uppercase tracking-[0.12em] text-[#7dd3fc]">
+                        <span className="ml-2.5 rounded-full border border-[rgba(22,104,201,0.4)] bg-[rgba(22,104,201,0.1)] px-2 py-0.5 align-middle font-mono text-[0.6rem] uppercase tracking-[0.12em] text-[var(--accent-ink)]">
                           Most requested
                         </span>
                       )}
                     </th>
-                    <td className="px-6 py-6 align-top text-[0.9375rem] text-[#cddff5]">
+                    <td className="px-6 py-6 align-top text-[0.9375rem] text-[var(--body)]">
                       {p.bestFor}
                     </td>
                     <td className="px-6 py-6 align-top">
-                      <span className="block text-[0.9375rem] text-[#cddff5]">
+                      <span className="block text-[0.9375rem] text-[var(--body)]">
                         {p.output}
                       </span>
                       <span className="mt-1.5 block max-w-md text-[0.8125rem] leading-snug text-muted">
@@ -62,7 +62,7 @@ export default function Packages() {
                     <td className="px-6 py-6 align-top">
                       <a
                         href="#quotation"
-                        className="inline-flex items-center gap-1.5 whitespace-nowrap text-[0.875rem] font-medium text-[#5cc6fb] transition-colors hover:text-white"
+                        className="inline-flex items-center gap-1.5 whitespace-nowrap text-[0.875rem] font-medium text-[var(--accent)] transition-colors hover:text-[var(--accent-ink)]"
                       >
                         Quote
                         <span className="h-3.5 w-3.5">
@@ -82,15 +82,15 @@ export default function Packages() {
             <Reveal key={p.length} delay={i * 80}>
               <article
                 className={`panel p-6 ${
-                  p.accent ? "border-[rgba(56,189,248,0.4)]" : ""
+                  p.accent ? "border-[rgba(22,104,201,0.4)]" : ""
                 }`}
               >
                 <div className="flex items-center justify-between gap-3">
-                  <span className="font-display text-[1.6rem] text-white">
+                  <span className="font-display text-[1.6rem] text-[var(--fg)]">
                     {p.length}
                   </span>
                   {p.accent && (
-                    <span className="rounded-full border border-[rgba(56,189,248,0.4)] bg-[rgba(56,189,248,0.1)] px-2.5 py-1 font-mono text-[0.6rem] uppercase tracking-[0.12em] text-[#7dd3fc]">
+                    <span className="rounded-full border border-[rgba(22,104,201,0.4)] bg-[rgba(22,104,201,0.1)] px-2.5 py-1 font-mono text-[0.6rem] uppercase tracking-[0.12em] text-[var(--accent-ink)]">
                       Most requested
                     </span>
                   )}
@@ -100,13 +100,13 @@ export default function Packages() {
                     <dt className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-muted">
                       Best for
                     </dt>
-                    <dd className="mt-1 text-[#cddff5]">{p.bestFor}</dd>
+                    <dd className="mt-1 text-[var(--body)]">{p.bestFor}</dd>
                   </div>
                   <div>
                     <dt className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-muted">
                       Typical output
                     </dt>
-                    <dd className="mt-1 text-[#cddff5]">{p.output}</dd>
+                    <dd className="mt-1 text-[var(--body)]">{p.output}</dd>
                     <dd className="mt-1 text-[0.8125rem] leading-snug text-muted">
                       {p.note}
                     </dd>

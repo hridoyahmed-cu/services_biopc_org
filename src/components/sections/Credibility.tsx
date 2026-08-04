@@ -7,7 +7,7 @@ export default function Credibility() {
     <section id="track-record" className="relative overflow-hidden py-20 md:py-28">
       <div
         className="glow-orb right-0 top-1/3 h-[28rem] w-[28rem] opacity-25"
-        style={{ background: "radial-gradient(circle, #0e7490, transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, #a5f3fc, transparent 70%)" }}
         aria-hidden="true"
       />
 
@@ -25,15 +25,15 @@ export default function Credibility() {
               <article className="panel panel-hover flex h-full flex-col p-6">
                 <div className="flex items-center gap-3">
                   <span className="chip !text-[0.625rem]">{pub.year}</span>
-                  <span className="text-[0.8125rem] font-medium italic text-[#5cc6fb]">
+                  <span className="text-[0.8125rem] font-medium italic text-[var(--accent)]">
                     {pub.venue}
                   </span>
                 </div>
-                <h3 className="mt-4 font-display text-[1.1rem] leading-snug text-white">
+                <h3 className="mt-4 font-display text-[1.1rem] leading-snug text-[var(--fg)]">
                   {pub.title}
                 </h3>
                 <p className="mt-auto pt-5 text-[0.8125rem] text-muted">
-                  <span className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-[#9fd5fb]">
+                  <span className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-[var(--accent)]">
                     BioPC contribution ·{" "}
                   </span>
                   {pub.contribution}
@@ -49,16 +49,16 @@ export default function Credibility() {
             <Reveal key={t.author} delay={i * 90}>
               <figure className="panel flex h-full flex-col p-7">
                 <span
-                  className="font-display text-[3rem] leading-[0.6] text-[rgba(56,189,248,0.35)]"
+                  className="font-display text-[3rem] leading-[0.6] text-[rgba(22,104,201,0.35)]"
                   aria-hidden="true"
                 >
                   &ldquo;
                 </span>
-                <blockquote className="mt-4 flex-1 font-display text-[1.05rem] leading-relaxed text-[#e2edfb]">
+                <blockquote className="mt-4 flex-1 font-display text-[1.05rem] leading-relaxed text-[var(--fg)]">
                   {t.quote}
                 </blockquote>
                 <figcaption className="mt-6 border-t border-[var(--hairline)] pt-4">
-                  <span className="block text-[0.8125rem] font-medium text-white">
+                  <span className="block text-[0.8125rem] font-medium text-[var(--fg)]">
                     {t.author}
                   </span>
                   <span className="mt-0.5 block text-[0.8125rem] text-muted">
@@ -81,7 +81,7 @@ export default function Credibility() {
                 {[...AFFILIATIONS, ...AFFILIATIONS].map((a, i) => (
                   <li
                     key={`${a}-${i}`}
-                    className="whitespace-nowrap text-[0.9375rem] font-medium text-[#7f96b6]"
+                    className="whitespace-nowrap text-[0.9375rem] font-medium text-[var(--muted)]"
                     aria-hidden={i >= AFFILIATIONS.length}
                   >
                     {a}

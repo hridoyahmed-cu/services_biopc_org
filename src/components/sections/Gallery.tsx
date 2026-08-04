@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { GALLERY, GALLERY_CATEGORIES } from "@/lib/site";
+import { FIGURE_DISCLAIMER, GALLERY, GALLERY_CATEGORIES } from "@/lib/site";
 import Reveal from "../Reveal";
 import SectionHeading from "../SectionHeading";
 
@@ -56,8 +56,8 @@ export default function Gallery() {
                 aria-pressed={filter === c}
                 className={`rounded-full border px-4 py-2 font-mono text-[0.7rem] uppercase tracking-[0.12em] transition-all ${
                   filter === c
-                    ? "border-[rgba(56,189,248,0.6)] bg-[rgba(56,189,248,0.12)] text-white"
-                    : "border-[var(--hairline)] text-muted hover:border-[rgba(56,189,248,0.35)] hover:text-[#c3d8f4]"
+                    ? "border-[var(--accent)] bg-[var(--accent)] text-[#fff]"
+                    : "border-[var(--hairline)] text-muted hover:border-[rgba(22,104,201,0.35)] hover:text-[var(--body)]"
                 }`}
               >
                 {c}
@@ -86,7 +86,7 @@ export default function Gallery() {
                   />
                 </span>
                 <span className="mt-4 flex items-center justify-between gap-3 px-1">
-                  <span className="text-[0.9375rem] font-medium text-white">
+                  <span className="text-[0.9375rem] font-medium text-[var(--fg)]">
                     {fig.title}
                   </span>
                   <span className="chip shrink-0 !text-[0.625rem]">
@@ -100,26 +100,36 @@ export default function Gallery() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={80}>
+          <p
+            role="note"
+            className="mt-8 rounded-xl border border-[rgba(194,65,12,0.3)] bg-[rgba(194,65,12,0.05)] px-5 py-4 text-[0.8125rem] leading-relaxed text-[var(--ember)]"
+          >
+            <strong className="font-semibold">Disclaimer.</strong>{" "}
+            {FIGURE_DISCLAIMER}
+          </p>
+        </Reveal>
       </div>
 
       {active && (
         <div
-          className="fixed inset-0 z-[60] flex items-center justify-center bg-[rgba(3,7,15,0.92)] p-4 backdrop-blur-md sm:p-8"
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-[rgba(11,31,61,0.62)] p-4 backdrop-blur-md sm:p-8"
           role="dialog"
           aria-modal="true"
           aria-label={active.title}
           onClick={close}
         >
           <div
-            className="flex max-h-full w-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-[var(--hairline)] bg-[#071228]"
+            className="flex max-h-full w-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-[var(--hairline)] bg-[var(--surface)]"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-start justify-between gap-4 border-b border-[var(--hairline)] px-6 py-4">
               <div>
-                <h3 className="font-display text-[1.3rem] leading-tight text-white">
+                <h3 className="font-display text-[1.3rem] leading-tight text-[var(--fg)]">
                   {active.title}
                 </h3>
-                <p className="mt-1 font-mono text-[0.65rem] uppercase tracking-[0.16em] text-[#5cc6fb]">
+                <p className="mt-1 font-mono text-[0.65rem] uppercase tracking-[0.16em] text-[var(--accent)]">
                   {active.category}
                 </p>
               </div>
@@ -127,7 +137,7 @@ export default function Gallery() {
                 type="button"
                 onClick={close}
                 aria-label="Close figure"
-                className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-[var(--hairline)] text-muted transition-colors hover:text-white"
+                className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-[var(--hairline)] text-muted transition-colors hover:text-[var(--accent-ink)]"
               >
                 <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.75">
                   <path d="m6 6 12 12M18 6 6 18" strokeLinecap="round" />
