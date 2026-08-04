@@ -18,21 +18,14 @@ Your other Hostinger sites are untouched; only the `services` subdomain moves.
 
 ## One-time setup
 
-### 1. Create the GitHub repository
+### 1. Repository — done
 
-On github.com, create a **new empty repository** named `services-biopc-org`
-(or anything you like). Do **not** tick "Add a README", .gitignore or licence —
-this folder is already a git repo with commits, and an extra initial commit on
-GitHub's side would need merging before you could push.
-
-Then, from this directory:
+The code lives at
+<https://github.com/Hridoy455/services_biopc_org> and `origin` is already
+configured, so from this directory you only ever need:
 
 ```bash
-git remote add origin https://github.com/Hridoy455/services-biopc-org.git
-```
-
-```bash
-git push -u origin main
+git push
 ```
 
 ### 2. Turn on Pages
