@@ -86,7 +86,11 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "16x16 32x32 48x48" },
+      { url: "/icon.png", type: "image/png", sizes: "256x256" },
+    ],
+    shortcut: "/favicon.ico",
     apple: "/brand/apple-touch-icon.png",
   },
   category: "science",

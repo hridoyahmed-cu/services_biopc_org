@@ -6,7 +6,7 @@
  * the white square corners show against the page.
  */
 import sharp from "sharp";
-import { mkdir } from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const SRC = path.resolve(process.cwd(), "../LOGO.jpg");
@@ -50,4 +50,41 @@ await sharp(round)
   .png()
   .toFile(path.resolve(process.cwd(), "src/app/icon.png"));
 
-console.log("✓ logo.webp, logo.png, apple-touch-icon.png, src/app/icon.png");
+/**
+ * A real /favicon.ico as well: browsers, crawlers and link-preview bots still
+ * request that exact path, and a 404 there is why the tab showed no logo.
+ * ICO entries may hold PNG payloads, which every current browser accepts.
+ */
+const icoSizes = [16, 32, 48];
+const pngs = await Promise.all(
+  icoSizes.map((s) => sharp(round).resize(s, s).png({ compressionLevel: 9 }).toBuffer()),
+);
+
+const header = Buffer.alloc(6);
+header.writeUInt16LE(0, 0); // reserved
+header.writeUInt16LE(1, 2); // type: icon
+header.writeUInt16LE(icoSizes.length, 4);
+
+let offset = 6 + 16 * icoSizes.length;
+const entries = icoSizes.map((size, i) => {
+  const e = Buffer.alloc(16);
+  e.writeUInt8(size === 256 ? 0 : size, 0); // width
+  e.writeUInt8(size === 256 ? 0 : size, 1); // height
+  e.writeUInt8(0, 2); // palette count
+  e.writeUInt8(0, 3); // reserved
+  e.writeUInt16LE(1, 4); // colour planes
+  e.writeUInt16LE(32, 6); // bits per pixel
+  e.writeUInt32LE(pngs[i].length, 8);
+  e.writeUInt32LE(offset, 12);
+  offset += pngs[i].length;
+  return e;
+});
+
+await writeFile(
+  path.resolve(process.cwd(), "src/app/favicon.ico"),
+  Buffer.concat([header, ...entries, ...pngs]),
+);
+
+console.log(
+  "✓ logo.webp, logo.png, apple-touch-icon.png, src/app/icon.png, src/app/favicon.ico",
+);

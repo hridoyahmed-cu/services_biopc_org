@@ -92,8 +92,8 @@ export default function Hero() {
           </dl>
         </div>
 
-        {/* Real trajectory, rendered from the delivered 500 ns run */}
-        <figure className="relative mx-auto w-full max-w-[34rem] lg:max-w-none">
+        {/* Protein–ligand animation. Silent, autoplaying, palindrome-looped. */}
+        <figure className="relative mx-auto w-full max-w-[36rem] lg:max-w-none">
           <div
             className="glow-orb inset-[14%] opacity-70"
             style={{ background: "radial-gradient(circle, #bfdbfe, transparent 70%)" }}
@@ -101,26 +101,34 @@ export default function Hero() {
           />
           <div className="panel relative overflow-hidden p-2.5">
             <video
-              className="aspect-square w-full rounded-xl bg-white object-cover"
-              poster="/video/md-trajectory-poster.webp"
+              className="aspect-video w-full rounded-xl bg-[var(--fg)] object-cover"
+              poster="/video/md-protein-ligand-poster.webp"
               autoPlay
               muted
               loop
               playsInline
+              disablePictureInPicture
               preload="metadata"
-              aria-label="Animation of a 500 nanosecond molecular dynamics trajectory moving through its essential conformational subspace"
+              aria-label="Animated illustration of a small-molecule ligand bound in a protein binding pocket, surrounded by water molecules"
             >
-              <source src="/video/md-trajectory.webm" type="video/webm" />
-              <source src="/video/md-trajectory.mp4" type="video/mp4" />
+              <source src="/video/md-protein-ligand.webm" type="video/webm" />
+              <source src="/video/md-protein-ligand.mp4" type="video/mp4" />
             </video>
 
             <figcaption className="absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-[var(--hairline)] bg-[rgba(255,255,255,0.92)] px-4 py-2 font-mono text-[0.65rem] tracking-[0.14em] text-[var(--accent)] backdrop-blur">
-              500 ns TRAJECTORY · 874 Cα · 310 K · NPT
+              PROTEIN–LIGAND COMPLEX · SOLVATED · 310 K
             </figcaption>
           </div>
           <p className="mt-3 text-center text-[0.75rem] text-muted">
-            Real output from a delivered BioPC project — 25,001 frames projected
-            onto the first two principal components.
+            Artist&rsquo;s impression for illustration. Your project&rsquo;s
+            actual results are shown in the{" "}
+            <a
+              href="#gallery"
+              className="underline decoration-dotted underline-offset-2 transition-colors hover:text-[var(--accent)]"
+            >
+              figure gallery
+            </a>
+            .
           </p>
         </figure>
       </div>

@@ -42,3 +42,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Hero video source (large; the encoded output in public/video is committed)
+/assets/hero-source.mp4
