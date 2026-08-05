@@ -21,14 +21,17 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <div className="shell relative grid items-center gap-14 py-16 md:py-24 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10 lg:py-28">
+      {/* Media column is the wider of the two: a 16:9 video is short, so giving
+          it the narrower column stranded it in the middle of a much taller text
+          column. Sized so both columns land within ~60px of each other. */}
+      <div className="shell relative grid items-center gap-12 pt-14 md:pt-20 xl:grid-cols-[0.92fr_1.08fr] xl:gap-12 xl:pt-24">
         <div>
           <div className="chip w-fit">
             <span className="h-1.5 w-1.5 rounded-full bg-[var(--helix)] shadow-[0_0_10px_2px_rgba(21,128,61,0.7)]" />
             Accepting new projects
           </div>
 
-          <h1 className="mt-6 font-display text-[clamp(2.3rem,1.1rem+4.1vw,4.1rem)] font-normal leading-[1.04] tracking-[-0.02em] text-[var(--fg)]">
+          <h1 className="mt-5 font-display text-[clamp(2.1rem,1.5rem+2.1vw,3.4rem)] font-normal leading-[1.06] tracking-[-0.02em] text-[var(--fg)]">
             Turn your docking results into{" "}
             <span className="relative whitespace-nowrap">
               <span className="bg-gradient-to-r from-[var(--accent-ink)] via-[var(--accent)] to-[var(--helix)] bg-clip-text text-transparent">
@@ -76,24 +79,10 @@ export default function Hero() {
             </a>
           </div>
 
-          <dl className="mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-[var(--hairline)] pt-7">
-            {[
-              ["5 µs", "Longest single run"],
-              ["300–600", "dpi figure output"],
-              ["9 days", "Average turnaround"],
-            ].map(([value, label]) => (
-              <div key={label}>
-                <dt className="font-display text-2xl text-[var(--fg)]">{value}</dt>
-                <dd className="mt-1 text-[0.8125rem] leading-snug text-muted">
-                  {label}
-                </dd>
-              </div>
-            ))}
-          </dl>
         </div>
 
         {/* Protein–ligand animation. Silent, autoplaying, palindrome-looped. */}
-        <figure className="relative mx-auto w-full max-w-[36rem] lg:max-w-none">
+        <figure className="relative mx-auto w-full max-w-[36rem] xl:max-w-none">
           <div
             className="glow-orb inset-[14%] opacity-70"
             style={{ background: "radial-gradient(circle, #bfdbfe, transparent 70%)" }}
@@ -101,7 +90,7 @@ export default function Hero() {
           />
           <div className="panel relative overflow-hidden p-2.5">
             <video
-              className="aspect-video w-full rounded-xl bg-[var(--fg)] object-cover"
+              className="aspect-[4/3] w-full rounded-xl bg-[var(--fg)] object-cover xl:aspect-[6/5]"
               poster="/video/md-protein-ligand-poster.webp"
               autoPlay
               muted
@@ -131,6 +120,26 @@ export default function Hero() {
             .
           </p>
         </figure>
+      </div>
+
+      {/* Stats span the full width rather than sitting in the text column —
+          that kept the left column ~150px taller than the media beside it. */}
+      <div className="shell relative mt-12 pb-14 md:pb-20 lg:pb-24">
+        <dl className="grid grid-cols-2 gap-x-6 gap-y-6 border-t border-[var(--hairline)] pt-7 sm:grid-cols-4">
+          {[
+            ["5 µs", "Longest single run"],
+            ["300–600", "dpi figure output"],
+            ["9 days", "Average turnaround"],
+            ["180+", "Projects delivered"],
+          ].map(([value, label]) => (
+            <div key={label}>
+              <dt className="font-display text-2xl text-[var(--fg)]">{value}</dt>
+              <dd className="mt-1 text-[0.8125rem] leading-snug text-muted">
+                {label}
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );
