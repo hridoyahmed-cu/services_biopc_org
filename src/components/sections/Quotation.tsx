@@ -141,7 +141,7 @@ export default function Quotation() {
   };
 
   return (
-    <section id="quotation" className="relative overflow-hidden py-20 md:py-28">
+    <section id="quotation" className="relative overflow-hidden section">
       <div
         className="glow-orb left-1/4 top-0 h-[30rem] w-[30rem] opacity-35"
         style={{ background: "radial-gradient(circle, #93c5fd, transparent 70%)" }}
@@ -153,10 +153,10 @@ export default function Quotation() {
           eyebrow="Request a MD Service"
           title="Tell us about your system"
           lede="Send what you have — even just a PDB ID and a research question is enough to start. You will receive a written quotation with a simulation plan and a realistic timeline, usually within one working day."
-          align="center"
+
         />
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-[1.5fr_1fr]">
+        <div className="section-body grid gap-6 lg:grid-cols-[1.5fr_1fr]">
           {/* ── Form ────────────────────────────────────────────────────── */}
           <Reveal>
             <div className="panel p-6 sm:p-8">

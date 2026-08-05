@@ -1,12 +1,10 @@
 import { WORKFLOW } from "@/lib/site";
-import RibbonBand from "../RibbonBand";
 import Reveal from "../Reveal";
 import SectionHeading from "../SectionHeading";
 
 export default function Workflow() {
   return (
-    <section id="workflow" className="relative overflow-hidden py-20 md:py-28">
-      <RibbonBand className="pointer-events-none absolute inset-x-0 top-0 h-24 w-full opacity-50" />
+    <section id="workflow" className="relative overflow-hidden section">
 
       <div className="shell relative">
         <SectionHeading
@@ -15,7 +13,7 @@ export default function Workflow() {
           lede="You are kept in the loop at each handover — equilibration plots before production starts, and a preliminary analysis before the final report is written."
         />
 
-        <ol className="relative mt-16 grid gap-8 lg:grid-cols-5 lg:gap-5">
+        <ol className="relative section-body grid gap-8 lg:grid-cols-5 lg:gap-5">
           {/* Connecting rail */}
           <span
             className="absolute left-[1.05rem] top-2 h-[calc(100%-1rem)] w-px bg-gradient-to-b from-[var(--accent)] via-[rgba(22,104,201,0.35)] to-transparent lg:left-0 lg:top-[1.05rem] lg:h-px lg:w-full lg:bg-gradient-to-r"

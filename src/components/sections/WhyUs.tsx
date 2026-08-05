@@ -5,7 +5,7 @@ import SectionHeading from "../SectionHeading";
 
 export default function WhyUs() {
   return (
-    <section id="why" className="relative py-20 md:py-28">
+    <section id="why" className="relative section">
       <div className="shell">
         <SectionHeading
           eyebrow="Why researchers choose BioPC"
@@ -13,7 +13,7 @@ export default function WhyUs() {
           lede="Every project is run on dedicated hardware, documented end to end, and priced before a single nanosecond is computed."
         />
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="section-body grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {DIFFERENTIATORS.map((item, i) => {
             const Icon = DIFF_ICONS[item.icon];
             return (
@@ -35,7 +35,7 @@ export default function WhyUs() {
         </div>
 
         <Reveal delay={120}>
-          <dl className="mt-6 grid gap-px overflow-hidden rounded-2xl border border-[var(--hairline)] bg-[var(--hairline)] sm:grid-cols-2 lg:grid-cols-4">
+          <dl className="mt-[var(--block-gap)] grid gap-px overflow-hidden rounded-2xl border border-[var(--hairline)] bg-[var(--hairline)] sm:grid-cols-2 lg:grid-cols-4">
             {METRICS.map((m) => (
               <div key={m.label} className="bg-[var(--surface)] px-6 py-7">
                 <dt className="font-display text-[2.1rem] leading-none text-[var(--fg)]">

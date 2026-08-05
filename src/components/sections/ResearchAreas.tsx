@@ -4,7 +4,7 @@ import SectionHeading from "../SectionHeading";
 
 export default function ResearchAreas() {
   return (
-    <section id="research-areas" className="relative py-20 md:py-28">
+    <section id="research-areas" className="relative section">
       <div className="shell">
         <SectionHeading
           eyebrow="Research areas we support"
@@ -12,7 +12,7 @@ export default function ResearchAreas() {
           lede="The methodology transfers; the interpretation does not. Tell us the biology and we will match the protocol to the question rather than the other way round."
         />
 
-        <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-[var(--hairline)] bg-[var(--hairline)] sm:grid-cols-2 lg:grid-cols-5">
+        <div className="section-body grid gap-px overflow-hidden rounded-2xl border border-[var(--hairline)] bg-[var(--hairline)] sm:grid-cols-2 lg:grid-cols-5">
           {RESEARCH_AREAS.map((area, i) => (
             <Reveal key={area.title} delay={(i % 5) * 70}>
               <article className="group h-full bg-[var(--surface)] p-6 transition-colors hover:bg-[var(--surface-2)]">

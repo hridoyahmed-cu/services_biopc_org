@@ -38,7 +38,7 @@ export default function Gallery() {
   }, [active, visible, close]);
 
   return (
-    <section id="gallery" className="relative py-20 md:py-28">
+    <section id="gallery" className="relative section">
       <div className="shell">
         <SectionHeading
           eyebrow="Sample results gallery"
@@ -47,7 +47,7 @@ export default function Gallery() {
         />
 
         <Reveal delay={80}>
-          <div className="mt-10 flex flex-wrap gap-2">
+          <div className="section-body flex flex-wrap gap-2">
             {GALLERY_CATEGORIES.map((c) => (
               <button
                 key={c}
@@ -66,7 +66,7 @@ export default function Gallery() {
           </div>
         </Reveal>
 
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-[var(--block-gap)] grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((fig, i) => (
             <Reveal key={fig.slug} delay={(i % 3) * 80}>
               <button
@@ -104,7 +104,7 @@ export default function Gallery() {
         <Reveal delay={80}>
           <p
             role="note"
-            className="mt-8 rounded-xl border border-[rgba(194,65,12,0.3)] bg-[rgba(194,65,12,0.05)] px-5 py-4 text-[0.8125rem] leading-relaxed text-[var(--ember)]"
+            className="mt-[var(--block-gap)] rounded-xl border border-[rgba(194,65,12,0.3)] bg-[rgba(194,65,12,0.05)] px-5 py-4 text-[0.8125rem] leading-relaxed text-[var(--ember)]"
           >
             <strong className="font-semibold">Disclaimer.</strong>{" "}
             {FIGURE_DISCLAIMER}

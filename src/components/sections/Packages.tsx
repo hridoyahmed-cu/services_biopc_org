@@ -5,7 +5,7 @@ import SectionHeading from "../SectionHeading";
 
 export default function Packages() {
   return (
-    <section id="packages" className="relative py-20 md:py-28">
+    <section id="packages" className="relative section">
       <div className="shell">
         <SectionHeading
           eyebrow="Simulation packages"
@@ -15,7 +15,7 @@ export default function Packages() {
 
         {/* Desktop: table. Mobile: stacked cards. Same data, one source. */}
         <Reveal delay={80}>
-          <div className="mt-14 hidden overflow-hidden rounded-2xl border border-[var(--hairline)] md:block">
+          <div className="section-body hidden overflow-hidden rounded-2xl border border-[var(--hairline)] md:block">
             <table className="w-full border-collapse text-left">
               <thead>
                 <tr className="bg-[var(--surface-2)]">
@@ -77,7 +77,7 @@ export default function Packages() {
           </div>
         </Reveal>
 
-        <div className="mt-12 grid gap-4 md:hidden">
+        <div className="section-body grid gap-4 md:hidden">
           {PACKAGES.map((p, i) => (
             <Reveal key={p.length} delay={i * 80}>
               <article
@@ -118,7 +118,7 @@ export default function Packages() {
         </div>
 
         <Reveal delay={140}>
-          <div className="mt-8 flex flex-col items-center gap-4 text-center">
+          <div className="mt-[var(--block-gap)] flex flex-col items-center gap-4 text-center">
             <a href="#quotation" className="btn btn-primary">
               Get an exact quotation
               <span className="h-4 w-4">

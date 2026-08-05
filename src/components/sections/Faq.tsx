@@ -4,7 +4,7 @@ import SectionHeading from "../SectionHeading";
 
 export default function Faq() {
   return (
-    <section id="faq" className="relative py-20 md:py-28">
+    <section id="faq" className="relative section">
       <div className="shell">
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
           <div className="lg:sticky lg:top-28 lg:self-start">
@@ -14,7 +14,7 @@ export default function Faq() {
               lede="The questions researchers actually send us before commissioning a project."
             />
             <Reveal delay={100}>
-              <div className="panel mt-8 p-6">
+              <div className="panel mt-[var(--heading-gap)] p-6">
                 <p className="text-[0.9375rem] text-[var(--body)]">
                   Still unsure whether MD is the right tool for your question?
                 </p>

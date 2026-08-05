@@ -4,7 +4,7 @@ import SectionHeading from "../SectionHeading";
 
 export default function Credibility() {
   return (
-    <section id="track-record" className="relative overflow-hidden py-20 md:py-28">
+    <section id="track-record" className="relative overflow-hidden section">
       <div
         className="glow-orb right-0 top-1/3 h-[28rem] w-[28rem] opacity-25"
         style={{ background: "radial-gradient(circle, #a5f3fc, transparent 70%)" }}
@@ -19,7 +19,7 @@ export default function Credibility() {
         />
 
         {/* Publications */}
-        <div className="mt-14 grid gap-5 lg:grid-cols-2">
+        <div className="section-body grid gap-5 lg:grid-cols-2">
           {PUBLICATIONS.map((pub, i) => (
             <Reveal key={pub.title} delay={(i % 2) * 90}>
               <article className="panel panel-hover flex h-full flex-col p-6">
@@ -44,7 +44,7 @@ export default function Credibility() {
         </div>
 
         {/* Testimonials */}
-        <div className="mt-6 grid gap-5 lg:grid-cols-3">
+        <div className="mt-[var(--block-gap)] grid gap-5 lg:grid-cols-3">
           {TESTIMONIALS.map((t, i) => (
             <Reveal key={t.author} delay={i * 90}>
               <figure className="panel flex h-full flex-col p-7">
@@ -72,7 +72,7 @@ export default function Credibility() {
 
         {/* Affiliations marquee */}
         <Reveal delay={120}>
-          <div className="mt-14">
+          <div className="mt-[var(--heading-gap)]">
             <p className="text-center font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted">
               Researchers we have worked with are based at
             </p>

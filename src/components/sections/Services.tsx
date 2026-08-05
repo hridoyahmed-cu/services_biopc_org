@@ -5,7 +5,7 @@ import SectionHeading from "../SectionHeading";
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-20 md:py-28">
+    <section id="services" className="relative section">
       <div
         className="glow-orb left-1/2 top-0 h-[26rem] w-[26rem] -translate-x-1/2 opacity-30"
         style={{ background: "radial-gradient(circle, #93c5fd, transparent 70%)" }}
@@ -18,7 +18,7 @@ export default function Services() {
           lede="Commission the whole workflow or any single stage. Systems already equilibrated elsewhere are welcome — we will validate them before production."
         />
 
-        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="section-body grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((service, i) => (
             <Reveal key={service.id} delay={(i % 3) * 90}>
               <article className="panel panel-hover group flex h-full flex-col p-7">
@@ -54,7 +54,7 @@ export default function Services() {
         </div>
 
         <Reveal delay={120}>
-          <div className="panel mt-6 flex flex-col items-start justify-between gap-6 p-7 sm:flex-row sm:items-center">
+          <div className="panel mt-[var(--block-gap)] flex flex-col items-start justify-between gap-6 p-7 sm:flex-row sm:items-center">
             <p className="text-[0.9375rem] text-[var(--body)]">
               Not sure which stages your project needs?{" "}
               <span className="text-muted">

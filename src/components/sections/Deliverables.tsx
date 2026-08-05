@@ -5,7 +5,7 @@ import SectionHeading from "../SectionHeading";
 
 export default function Deliverables() {
   return (
-    <section id="deliverables" className="relative py-20 md:py-28">
+    <section id="deliverables" className="relative section">
       <div className="shell">
         <SectionHeading
           eyebrow="What you receive"
@@ -13,7 +13,7 @@ export default function Deliverables() {
           lede="Everything below ships with every completed project. If a journal asks for something else, we prepare it before you have to ask."
         />
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-[1.25fr_1fr] lg:gap-14">
+        <div className="section-body grid gap-10 lg:grid-cols-[1.25fr_1fr] lg:gap-14">
           <Reveal>
             <ul className="grid gap-px overflow-hidden rounded-2xl border border-[var(--hairline)] bg-[var(--hairline)] sm:grid-cols-2">
               {DELIVERABLES.map((d) => (

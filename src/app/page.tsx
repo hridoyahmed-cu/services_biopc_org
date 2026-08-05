@@ -9,6 +9,7 @@ import ResearchAreas from "@/components/sections/ResearchAreas";
 import Credibility from "@/components/sections/Credibility";
 import Faq from "@/components/sections/Faq";
 import Quotation from "@/components/sections/Quotation";
+import SectionDivider from "@/components/SectionDivider";
 import { FAQ, PACKAGES, SERVICES, SITE } from "@/lib/site";
 
 const jsonLd = {
@@ -84,15 +85,25 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Hero />
+      <SectionDivider />
       <WhyUs />
+      <SectionDivider />
       <Services />
+      <SectionDivider flip />
       <Deliverables />
+      <SectionDivider />
       <Workflow />
+      <SectionDivider flip />
       <Packages />
+      <SectionDivider />
       <Gallery />
+      <SectionDivider flip />
       <ResearchAreas />
+      <SectionDivider />
       <Credibility />
+      <SectionDivider flip />
       <Faq />
+      <SectionDivider />
       <Quotation />
     </>
   );
