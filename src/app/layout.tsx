@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
     default:
-      "Molecular Dynamics Simulation Service | GROMACS, Desmond & AMBER — BioPC",
+      "Molecular Dynamics Simulation Service | GROMACS, Desmond & AMBER, BioPC",
     template: "%s | BioPC MD Simulation Service",
   },
   description: SITE.description,

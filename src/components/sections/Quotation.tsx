@@ -45,9 +45,9 @@ export default function Quotation() {
       `WhatsApp: ${get("whatsapp")}`,
       `Protein (PDB ID / description): ${get("pdb")}`,
       `Simulation length: ${get("length")}`,
-      `Analysis required: ${analyses || "—"}`,
-      `Manuscript deadline: ${get("deadline") || "—"}`,
-      `Notes: ${get("notes") || "—"}`,
+      `Analysis required: ${analyses || "(none)"}`,
+      `Manuscript deadline: ${get("deadline") || "(none)"}`,
+      `Notes: ${get("notes") || "(none)"}`,
     ].join("\n");
   };
 
@@ -95,7 +95,7 @@ export default function Quotation() {
     };
 
     if (!ENDPOINT) {
-      // No backend configured — hand off to the user's mail client.
+      // No backend configured, hand off to the user's mail client.
       const body = encodeURIComponent(
         `${buildSummary(data)}\n\n(Please attach your structure files to this email.)`,
       );
@@ -125,7 +125,7 @@ export default function Quotation() {
   };
 
   /**
-   * Built on click, not on render — otherwise the href is captured while the
+   * Built on click, not on render, otherwise the href is captured while the
    * form is still empty and the user sends us a blank summary.
    */
   const onWhatsAppClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -152,7 +152,7 @@ export default function Quotation() {
         <SectionHeading
           eyebrow="Request a MD Service"
           title="Tell us about your system"
-          lede="Send what you have — even just a PDB ID and a research question is enough to start. You will receive a written quotation with a simulation plan and a realistic timeline, usually within one working day."
+          lede="Send what you have, even just a PDB ID and a research question is enough to start. You will receive a written quotation with a simulation plan and a realistic timeline, usually within one working day."
 
         />
 
@@ -260,7 +260,7 @@ export default function Quotation() {
                     </div>
                   </div>
                   <p className="mt-2 text-[0.75rem] text-muted">
-                    Up to 8 MB per file. Larger systems or multi-ligand series —
+                    Up to 8 MB per file. Larger systems or multi-ligand series -
                     email them to {SITE.email}.
                   </p>
 

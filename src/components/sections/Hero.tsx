@@ -2,12 +2,12 @@ import TrajectoryField from "../TrajectoryField";
 import { ArrowIcon, DownloadIcon } from "../Icons";
 
 const ENGINES = ["GROMACS", "Desmond", "AMBER"];
-const BADGES = ["100 ns – 5 µs", "MM/PBSA", "Publication-ready"];
+const BADGES = ["100 ns to 5 µs", "MM/PBSA", "Publication-ready"];
 
 const STATS = [
   ["5 µs", "Longest single run"],
-  ["300–600", "dpi figure output"],
-  ["9 days", "Average turnaround"],
+  ["300-600", "dpi figure output"],
+  ["3 days", "Average turnaround"],
   ["180+", "Projects delivered"],
 ];
 
@@ -28,17 +28,19 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      {/* Copy block. Full width rather than a column beside the video: the reel
-          is 16:9 and carries on-screen titles, so it cannot be cropped into a
-          side column without clipping them. */}
-      <div className="shell relative pt-12 md:pt-16">
-        <div className="max-w-3xl">
+      {/* Two columns on desktop: copy left, reel right. The reel stays 16:9 and
+          uncropped (it carries on-screen titles and a URL), so the stats sit
+          under it to bring the two columns to a comparable height. Below xl the
+          columns stack, because a narrower text column pushes the headline to
+          five lines. */}
+      <div className="shell relative grid items-start gap-10 pt-12 md:pt-16 xl:grid-cols-[1fr_1fr] xl:gap-12">
+        <div className="max-w-3xl xl:max-w-none">
           <div className="chip w-fit">
             <span className="h-1.5 w-1.5 rounded-full bg-[var(--helix)] shadow-[0_0_10px_2px_rgba(21,128,61,0.7)]" />
             Accepting new projects
           </div>
 
-          <h1 className="mt-5 font-display text-[clamp(2.1rem,1.4rem+2.4vw,3.5rem)] font-normal leading-[1.06] tracking-[-0.02em] text-[var(--fg)]">
+          <h1 className="mt-5 font-display text-[clamp(2.1rem,1.5rem+1.9vw,3rem)] font-normal leading-[1.08] tracking-[-0.02em] text-[var(--fg)]">
             Turn your docking results into{" "}
             <span className="bg-gradient-to-r from-[var(--accent-ink)] via-[var(--accent)] to-[var(--helix)] bg-clip-text text-transparent">
               publication-ready
@@ -46,9 +48,9 @@ export default function Hero() {
             molecular dynamics insights
           </h1>
 
-          <p className="lede mt-5">
+          <p className="lede mt-5 text-justify hyphens-auto">
             GPU-accelerated MD simulations from 100 ns to 5 µs using GROMACS,
-            Desmond and AMBER workflows — delivered with the figures, data and
+            Desmond and AMBER workflows, delivered with the figures, data and
             interpretation your manuscript actually needs.
           </p>
 
@@ -84,12 +86,11 @@ export default function Hero() {
             </a>
           </div>
         </div>
-      </div>
 
-      {/* Service reel, shown uncropped at 16:9 and looping continuously. */}
-      <div className="shell relative mt-10 md:mt-12">
-        <figure>
-          <div className="panel overflow-hidden p-2 md:p-2.5">
+        {/* Service reel, shown uncropped at 16:9 and looping continuously. */}
+        <div className="mt-2 xl:mt-0">
+          <figure>
+            <div className="panel overflow-hidden p-2 md:p-2.5">
             <video
               className="aspect-video w-full rounded-xl bg-[var(--fg)] object-cover"
               poster="/video/biopc-md-reel-poster.webp"
@@ -104,33 +105,38 @@ export default function Hero() {
               <source src="/video/biopc-md-reel.webm" type="video/webm" />
               <source src="/video/biopc-md-reel.mp4" type="video/mp4" />
             </video>
-          </div>
-          <figcaption className="mt-3 text-center text-[0.75rem] text-muted">
-            Service overview reel. Molecular renderings are illustrative — your
-            project&rsquo;s actual results are shown in the{" "}
-            <a
-              href="#gallery"
-              className="underline decoration-dotted underline-offset-2 transition-colors hover:text-[var(--accent)]"
-            >
-              figure gallery
-            </a>
-            .
-          </figcaption>
-        </figure>
+            </div>
+            <figcaption className="mt-3 text-center text-[0.75rem] text-muted">
+              Service overview reel. Molecular renderings are illustrative, your
+              project&rsquo;s actual results are shown in the{" "}
+              <a
+                href="#gallery"
+                className="underline decoration-dotted underline-offset-2 transition-colors hover:text-[var(--accent)]"
+              >
+                figure gallery
+              </a>
+              .
+            </figcaption>
+          </figure>
+
+          {/* Stats live under the reel so the media column reaches a height
+              comparable to the copy column beside it. */}
+          <dl className="mt-7 grid grid-cols-2 gap-x-6 gap-y-6 border-t border-[var(--hairline)] pt-6 sm:grid-cols-4 xl:grid-cols-2">
+            {STATS.map(([value, label]) => (
+              <div key={label}>
+                <dt className="font-display text-2xl text-[var(--fg)]">
+                  {value}
+                </dt>
+                <dd className="mt-1 text-[0.8125rem] leading-snug text-muted">
+                  {label}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </div>
 
-      <div className="shell relative mt-10 pb-14 md:mt-12 md:pb-20">
-        <dl className="grid grid-cols-2 gap-x-6 gap-y-6 border-t border-[var(--hairline)] pt-7 sm:grid-cols-4">
-          {STATS.map(([value, label]) => (
-            <div key={label}>
-              <dt className="font-display text-2xl text-[var(--fg)]">{value}</dt>
-              <dd className="mt-1 text-[0.8125rem] leading-snug text-muted">
-                {label}
-              </dd>
-            </div>
-          ))}
-        </dl>
-      </div>
+      <div className="pb-14 md:pb-20" />
     </section>
   );
 }

@@ -4,7 +4,7 @@ export const SITE = {
   url: "https://services.biopc.org",
   tagline: "Reliable. Reproducible. Publication-ready.",
   description:
-    "GPU-accelerated molecular dynamics simulation services from 100 ns to 5 µs using GROMACS, Desmond and AMBER. Trajectory analysis, PCA, free energy landscapes, DCCM and MM/PBSA binding free energy — delivered as publication-ready figures and data.",
+    "GPU-accelerated molecular dynamics simulation services from 100 ns to 5 µs using GROMACS, Desmond and AMBER. Trajectory analysis, PCA, free energy landscapes, DCCM and MM/PBSA binding free energy, delivered as publication-ready figures and data.",
   phone: "+880 1855-310554",
   phoneHref: "+8801855310554",
   whatsapp: "+880 1622-488559",
@@ -29,21 +29,21 @@ export const NAV = [
 ] as const;
 
 /* ─────────────────────────────────────────────────────────────────────────
- * PLACEHOLDER CONTENT — MUST BE REPLACED WITH REAL DATA BEFORE LAUNCH.
+ * PLACEHOLDER CONTENT, MUST BE REPLACED WITH REAL DATA BEFORE LAUNCH.
  *
  * METRICS, PUBLICATIONS, TESTIMONIALS and AFFILIATIONS below were written as
  * realistic structural examples so the layout could be built. They are NOT
  * real records. Publishing invented publication credits, client quotes or
  * university affiliations is a misrepresentation and a legal risk.
- * Substitute verified entries — or delete the entries you cannot verify.
+ * Substitute verified entries, or delete the entries you cannot verify.
  * See REPLACE-BEFORE-LAUNCH.md.
  * ───────────────────────────────────────────────────────────────────────── */
 
 export const METRICS = [
   { value: "180+", label: "MD projects completed", detail: "Since 2021" },
-  { value: "26", label: "Peer-reviewed papers supported", detail: "Q1–Q3 journals" },
+  { value: "26", label: "Peer-reviewed papers supported", detail: "Q1-Q3 journals" },
   { value: "5 µs", label: "Longest production run", detail: "Single continuous trajectory" },
-  { value: "9 days", label: "Average turnaround", detail: "Typical 100–200 ns project" },
+  { value: "3 days", label: "Average turnaround", detail: "Typical 100-200 ns project" },
 ] as const;
 
 export const DIFFERENTIATORS = [
@@ -117,7 +117,7 @@ export const SERVICES = [
   {
     id: "interaction",
     number: "04",
-    title: "Protein–ligand interaction analysis",
+    title: "Protein-ligand interaction analysis",
     summary: "Which contacts hold, for how long, and what that means for affinity.",
     items: [
       "Hydrogen bond occupancy",
@@ -159,14 +159,14 @@ export const SERVICES = [
 ] as const;
 
 export const DELIVERABLES = [
-  { title: "High-resolution figures", detail: "300–600 dpi raster, ready for submission" },
+  { title: "High-resolution figures", detail: "300-600 dpi raster, ready for submission" },
   { title: "Vector graphics", detail: "SVG, PDF and EPS for infinite rescaling" },
   { title: "Raw trajectory files", detail: ".xtc and .trr, plus the fitted trajectories" },
   { title: "Topology & parameter files", detail: "Full system definition for reproduction" },
   { title: "Analysis scripts", detail: "Every plot regenerable from the shipped code" },
   { title: "CSV / Excel data tables", detail: "The numbers behind every curve" },
   { title: "Statistical summaries", detail: "Means, SD, block averages, convergence tests" },
-  { title: "Interpretation report", detail: "A concise 2–10 page scientific write-up" },
+  { title: "Interpretation report", detail: "A concise 2-10 page scientific write-up" },
   { title: "Manuscript figure legends", detail: "Drafted in journal style, ready to paste" },
   { title: "Supplementary package", detail: "SI figures and tables bundled separately" },
 ] as const;
@@ -194,7 +194,7 @@ export const WORKFLOW = [
     step: "Step 4",
     title: "Advanced analysis",
     detail: "Trajectory, PCA, MM/PBSA",
-    body: "The full stability panel, interaction profiling, essential dynamics and binding free energy — each plotted to publication specification.",
+    body: "The full stability panel, interaction profiling, essential dynamics and binding free energy, each plotted to publication specification.",
   },
   {
     step: "Step 5",
@@ -209,11 +209,11 @@ export const PACKAGES = [
     length: "100 ns",
     bestFor: "Thesis projects",
     output: "Stability analysis",
-    note: "RMSD, RMSF, Rg, SASA and hydrogen bonding — the standard panel for a defensible thesis chapter.",
+    note: "RMSD, RMSF, Rg, SASA and hydrogen bonding, the standard panel for a defensible thesis chapter.",
     accent: false,
   },
   {
-    length: "200–500 ns",
+    length: "200-500 ns",
     bestFor: "Journal manuscripts",
     output: "Convergence and interaction analysis",
     note: "Adds convergence assessment, DSSP, contact maps and interaction fractions for peer review.",
@@ -227,7 +227,7 @@ export const PACKAGES = [
     accent: false,
   },
   {
-    length: "2–5 µs",
+    length: "2-5 µs",
     bestFor: "Drug discovery research",
     output: "Long-timescale conformational behaviour",
     note: "Rare-event sampling, cluster analysis and comparative binding across ligand series.",
@@ -274,14 +274,14 @@ export const GALLERY = [
     title: "Essential subspace",
     category: "Advanced",
     caption:
-      "PC1–PC2 projection coloured by simulation time, showing the transition between conformational basins.",
+      "PC1-PC2 projection coloured by simulation time, showing the transition between conformational basins.",
   },
   {
     slug: "mmpbsa-components",
     title: "MM/PBSA energy components",
     category: "Energetics",
     caption:
-      "Decomposed binding free energy under Generalised Born and Poisson–Boltzmann solvation, with standard errors.",
+      "Decomposed binding free energy under Generalised Born and Poisson-Boltzmann solvation, with standard errors.",
   },
   {
     slug: "interface",
@@ -323,7 +323,7 @@ export const GALLERY = [
     title: "Radius of gyration",
     category: "Stability",
     caption:
-      "Compactness of the complex across the trajectory — a direct readout of global folding stability.",
+      "Compactness of the complex across the trajectory, a direct readout of global folding stability.",
   },
   {
     slug: "sasa",
@@ -344,7 +344,7 @@ export const GALLERY = [
     title: "MM/PBSA convergence",
     category: "Energetics",
     caption:
-      "Equivalent convergence assessment under Poisson–Boltzmann solvation for the same trajectory.",
+      "Equivalent convergence assessment under Poisson-Boltzmann solvation for the same trajectory.",
   },
 ] as const;
 
@@ -362,14 +362,14 @@ export const GALLERY_CATEGORIES = [
 
 export const RESEARCH_AREAS = [
   { title: "Drug discovery", body: "Lead optimisation, scaffold comparison and residence-time reasoning." },
-  { title: "Protein–ligand complexes", body: "Pose validation and interaction persistence after docking." },
+  { title: "Protein-ligand complexes", body: "Pose validation and interaction persistence after docking." },
   { title: "Peptide therapeutics", body: "Conformational stability and target engagement of designed peptides." },
   { title: "Enzyme engineering", body: "Active-site dynamics and the effect of stabilising mutations." },
   { title: "Vaccine design", body: "Multi-epitope construct stability and receptor complex behaviour." },
   { title: "Antibody modelling", body: "CDR loop flexibility and antigen interface characterisation." },
   { title: "Membrane proteins", body: "Lipid-bilayer embedded systems with appropriate membrane force fields." },
   { title: "Viral proteins", body: "Protease, polymerase and spike-class targets with inhibitor series." },
-  { title: "Protein–protein interactions", body: "Interface energetics and hot-spot residue identification." },
+  { title: "Protein-protein interactions", body: "Interface energetics and hot-spot residue identification." },
   { title: "Computational biophysics", body: "Allostery, collective motion and conformational free energy." },
 ] as const;
 
@@ -413,7 +413,7 @@ export const TESTIMONIALS = [
   },
   {
     quote:
-      "We sent docking poses on a Monday and had a 200 ns trajectory with the full stability panel back within two weeks — figures already at journal resolution.",
+      "We sent docking poses on a Monday and had a 200 ns trajectory with the full stability panel back within two weeks, figures already at journal resolution.",
     author: "PhD candidate, Computational Drug Design",
     org: "Research group, India",
   },
@@ -439,7 +439,7 @@ export const AFFILIATIONS = [
 export const FAQ = [
   {
     q: "Which software do you use?",
-    a: "GROMACS, Desmond and AMBER-based workflows, selected per project. GROMACS is our default for protein–protein and membrane systems; Desmond where the Simulation Interaction Diagram is expected by the target journal; AMBER where the ligand parameterisation or MM/PBSA route calls for it.",
+    a: "GROMACS, Desmond and AMBER-based workflows, selected per project. GROMACS is our default for protein-protein and membrane systems; Desmond where the Simulation Interaction Diagram is expected by the target journal; AMBER where the ligand parameterisation or MM/PBSA route calls for it.",
   },
   {
     q: "Can you continue from my docking results?",
@@ -478,7 +478,7 @@ export const SIM_LENGTHS = [
   "1 µs",
   "2 µs",
   "5 µs",
-  "Not sure — please advise",
+  "Not sure, please advise",
 ] as const;
 
 export const ANALYSIS_OPTIONS = [

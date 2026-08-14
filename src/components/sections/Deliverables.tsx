@@ -56,7 +56,7 @@ export default function Deliverables() {
                   See exactly what lands in your inbox
                 </h3>
                 <p className="mt-4 text-[0.9375rem] leading-relaxed text-muted">
-                  A real 500 ns protein–protein project, redacted and reformatted:
+                  A real 500 ns protein-protein project, redacted and reformatted:
                   the full stability panel, interaction profiling, essential
                   dynamics and MM/PBSA decomposition, with the interpretation
                   text we would write for your manuscript.

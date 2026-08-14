@@ -1,5 +1,5 @@
 // Generates the 1200x630 social preview card (light theme, real logo).
-// Run build-brand.mjs first — this composites public/brand/logo.png.
+// Run build-brand.mjs first, this composites public/brand/logo.png.
 import sharp from "sharp";
 import path from "node:path";
 
@@ -72,7 +72,7 @@ const svg = `
     <rect x="324" y="416" width="102" height="38" rx="19" fill="#1668c9" fill-opacity="0.08" stroke="#1668c9" stroke-opacity="0.35"/>
     <text x="375" y="441" text-anchor="middle">AMBER</text>
     <rect x="438" y="416" width="150" height="38" rx="19" fill="#ffffff" stroke="#b9cde8"/>
-    <text x="513" y="441" text-anchor="middle">100 ns – 5 µs</text>
+    <text x="513" y="441" text-anchor="middle">100 ns to 5 µs</text>
     <rect x="600" y="416" width="122" height="38" rx="19" fill="#ffffff" stroke="#b9cde8"/>
     <text x="661" y="441" text-anchor="middle">MM/PBSA</text>
   </g>

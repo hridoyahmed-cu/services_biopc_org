@@ -2,7 +2,7 @@
  * The wave-and-node motif used to occupy the space between sections, so the
  * page reads as continuous rather than as blocks separated by voids.
  *
- * Decorative only — hidden from assistive tech. Pure SVG, no runtime cost.
+ * Decorative only, hidden from assistive tech. Pure SVG, no runtime cost.
  * `flip` mirrors the curve so consecutive dividers do not look copy-pasted.
  *
  * The negative block margin lets the band sit *inside* the adjacent sections'

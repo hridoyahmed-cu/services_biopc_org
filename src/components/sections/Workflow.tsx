@@ -10,7 +10,7 @@ export default function Workflow() {
         <SectionHeading
           eyebrow="Project workflow"
           title="From coordinates to camera-ready in five stages"
-          lede="You are kept in the loop at each handover — equilibration plots before production starts, and a preliminary analysis before the final report is written."
+          lede="You are kept in the loop at each handover, equilibration plots before production starts, and a preliminary analysis before the final report is written."
         />
 
         <ol className="relative section-body grid gap-8 lg:grid-cols-5 lg:gap-5">

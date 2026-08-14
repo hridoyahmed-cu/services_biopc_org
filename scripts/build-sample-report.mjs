@@ -25,14 +25,14 @@ const FIGURES = [
     n: 1,
     title: "Backbone RMSD",
     caption:
-      "C-alpha RMSD of each partner and of the complex over the 500 ns production trajectory. Both chains plateau within the first 40 ns and remain within 0.35 nm of the equilibrated reference thereafter, so frames from 50–500 ns were carried into all downstream analysis.",
+      "C-alpha RMSD of each partner and of the complex over the 500 ns production trajectory. Both chains plateau within the first 40 ns and remain within 0.35 nm of the equilibrated reference thereafter, so frames from 50-500 ns were carried into all downstream analysis.",
   },
   {
     file: "MD figures/M2_rmsf.png",
     n: 2,
     title: "Per-residue backbone fluctuation",
     caption:
-      "RMSF per residue for both binding partners. The receptor (blue) is uniformly rigid, while the smaller partner (red) shows elevated fluctuation at solvent-exposed loops around residues 180–250 — motion that is peripheral to, and does not destabilise, the interface.",
+      "RMSF per residue for both binding partners. The receptor (blue) is uniformly rigid, while the smaller partner (red) shows elevated fluctuation at solvent-exposed loops around residues 180-250, motion that is peripheral to, and does not destabilise, the interface.",
   },
   {
     file: "MD figures/M3_gyrate.png",
@@ -60,7 +60,7 @@ const FIGURES = [
     n: 6,
     title: "Interface persistence",
     caption:
-      "Upper: heavy-atom contacts within 0.6 nm, which increase over the first 100 ns as the interface anneals and then remain high. Lower: minimum inter-chain distance, stable at ~0.17 nm — the partners never separate.",
+      "Upper: heavy-atom contacts within 0.6 nm, which increase over the first 100 ns as the interface anneals and then remain high. Lower: minimum inter-chain distance, stable at ~0.17 nm, the partners never separate.",
   },
   {
     file: "MD figures/M7_secondary_structure.png",
@@ -81,7 +81,7 @@ const FIGURES = [
     n: 9,
     title: "Essential subspace projection",
     caption:
-      "PC1–PC2 projection coloured by simulation time. The trajectory migrates from an initial basin (light) into a distinct, well-populated basin (dark) that it occupies for the remainder of the run.",
+      "PC1-PC2 projection coloured by simulation time. The trajectory migrates from an initial basin (light) into a distinct, well-populated basin (dark) that it occupies for the remainder of the run.",
   },
   {
     file: "MD figures/F_FEL_PC1_PC2.png",
@@ -121,9 +121,9 @@ const FIGURES = [
 ];
 
 const doc = await PDFDocument.create();
-doc.setTitle("Sample Molecular Dynamics Report — BioPC");
+doc.setTitle("Sample Molecular Dynamics Report, BioPC");
 doc.setAuthor("BioPC");
-doc.setSubject("Example deliverable: 500 ns protein–protein MD simulation with MM/PBSA");
+doc.setSubject("Example deliverable: 500 ns protein-protein MD simulation with MM/PBSA");
 doc.setCreator("BioPC Molecular Dynamics Simulation Service");
 doc.setKeywords(["molecular dynamics", "GROMACS", "MM/PBSA", "sample report", "BioPC"]);
 
@@ -138,6 +138,8 @@ const serifBold = await doc.embedFont(StandardFonts.TimesRomanBold);
  * notation; this maps anything that slips through rather than throwing.
  */
 const CHAR_MAP = [
+  // Minus sign, en dash, em dash. These literals are deliberate: the rule
+  // exists to catch such characters if they ever reach the report text.
   [/[−–—]/g, "-"],
   [/⁻¹/g, "-1"],
   [/Å/g, "A"],
@@ -199,7 +201,7 @@ function newPage() {
       thickness: 0.5,
       color: HAIR,
     });
-    // footer — disclaimer on every page, so a detached print still carries it
+    // footer, disclaimer on every page, so a detached print still carries it
     page.drawText(
       "Not for commercial or research use. Reusing these figures in your own research will result in it being falsified and retracted.",
       { x: M, y: 46, size: 6.6, font: italic, color: rgb(0.68, 0.24, 0.1) },
@@ -264,7 +266,7 @@ for (const line of wrap("Sample Molecular Dynamics Report", serifBold, 27, A4.w 
 }
 
 cover.drawText(
-  "500 ns protein–protein complex · GROMACS · MM/PBSA & MM/GBSA",
+  "500 ns protein-protein complex · GROMACS · MM/PBSA & MM/GBSA",
   { x: M, y: y - 6, size: 11.5, font: regular, color: rgb(0.66, 0.8, 0.96) },
 );
 
@@ -290,7 +292,7 @@ for (const [k, v] of specs) {
   y -= 20;
 }
 
-// Usage restriction — boxed on the cover so it cannot be overlooked
+// Usage restriction, boxed on the cover so it cannot be overlooked
 cover.drawRectangle({
   x: M,
   y: 100,
@@ -358,9 +360,9 @@ summary.drawLine({
 });
 y -= 26;
 
-const summaryText = `A 500 ns all-atom molecular dynamics simulation was carried out on the protein–protein complex to establish whether the docked pose represents a stable, physically plausible assembly, and to quantify the energetic basis of the interaction.
+const summaryText = `A 500 ns all-atom molecular dynamics simulation was carried out on the protein-protein complex to establish whether the docked pose represents a stable, physically plausible assembly, and to quantify the energetic basis of the interaction.
 
-The complex is stable across the full trajectory. Backbone RMSD equilibrates within 40 ns and remains flat thereafter; radius of gyration and solvent-accessible surface area show no drift; and DSSP analysis confirms that the secondary structure of both partners is preserved. The interface itself strengthens over the first 100 ns — heavy-atom contacts rise and then plateau, while the minimum inter-chain distance holds near 0.17 nm for the entire run. Hydrogen bonding at the interface is sustained rather than transient.
+The complex is stable across the full trajectory. Backbone RMSD equilibrates within 40 ns and remains flat thereafter; radius of gyration and solvent-accessible surface area show no drift; and DSSP analysis confirms that the secondary structure of both partners is preserved. The interface itself strengthens over the first 100 ns, heavy-atom contacts rise and then plateau, while the minimum inter-chain distance holds near 0.17 nm for the entire run. Hydrogen bonding at the interface is sustained rather than transient.
 
 Principal component analysis shows that the essential dynamics are captured by two components. The trajectory transitions out of its starting basin within the first 100 ns and settles into a single, deep free-energy minimum, indicating one dominant conformational state rather than continued conformational searching. The dynamic cross-correlation matrix shows coordinated inter-chain motion, consistent with a mechanically coupled complex rather than two independently tumbling proteins.
 
@@ -454,14 +456,14 @@ last.drawLine({ start: { x: M, y }, end: { x: M + 46, y }, thickness: 2, color: 
 y -= 30;
 
 const deliverables = [
-  ["High-resolution figures", "300–600 dpi raster, prepared to journal specification"],
+  ["High-resolution figures", "300-600 dpi raster, prepared to journal specification"],
   ["Vector graphics", "SVG, PDF and EPS versions of every panel"],
   ["Raw trajectory files", ".xtc and .trr, plus PBC-corrected and fitted trajectories"],
   ["Topology & parameters", "Complete system definition so the run can be reproduced"],
   ["Analysis scripts", "Every figure regenerable from the code shipped with the report"],
   ["Data tables", "CSV and Excel exports of the numbers behind each curve"],
   ["Statistical summaries", "Means, standard deviations, block averaging, convergence tests"],
-  ["Interpretation report", "A written 2–10 page scientific analysis, not just plots"],
+  ["Interpretation report", "A written 2-10 page scientific analysis, not just plots"],
   ["Figure legends", "Drafted in journal style, ready to paste into your manuscript"],
   ["Supplementary package", "SI figures and tables bundled separately for submission"],
 ];
@@ -495,7 +497,7 @@ last.drawText("Ready to scope your project?", {
   color: rgb(1, 1, 1),
 });
 last.drawText(
-  "Send your protein, ligand and research question for a written quotation — usually within one working day.",
+  "Send your protein, ligand and research question for a written quotation, usually within one working day.",
   { x: M + 22, y: y - 54, size: 8.8, font: regular, color: rgb(0.72, 0.83, 0.95) },
 );
 last.drawText("services.biopc.org   ·   biopc.research@gmail.com   ·   WhatsApp +880 1622-488559", {
@@ -508,4 +510,4 @@ last.drawText("services.biopc.org   ·   biopc.research@gmail.com   ·   WhatsAp
 
 const bytes = await doc.save();
 await writeFile(OUT, bytes);
-console.log(`✓ ${OUT} — ${pageNo} pages, ${(bytes.length / 1024 / 1024).toFixed(2)} MB`);
+console.log(`✓ ${OUT}, ${pageNo} pages, ${(bytes.length / 1024 / 1024).toFixed(2)} MB`);

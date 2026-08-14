@@ -53,7 +53,7 @@ const jsonLd = {
       makesOffer: PACKAGES.map((p) => ({
         "@type": "Offer",
         name: `${p.length} production MD simulation`,
-        description: `${p.bestFor} — ${p.output}. ${p.note}`,
+        description: `${p.bestFor}, ${p.output}. ${p.note}`,
         category: "Molecular dynamics simulation",
       })),
     },

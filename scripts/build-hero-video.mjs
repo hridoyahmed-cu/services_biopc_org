@@ -6,7 +6,7 @@
  * What this does:
  *   - strips the audio track entirely (the hero autoplays; browsers only
  *     permit that when muted, and a silent file is smaller)
- *   - scales to a high-resolution web master, preserving 16:9 — the reel
+ *   - scales to a high-resolution web master, preserving 16:9, the reel
  *     carries titles, a URL and a call-to-action, so it must not be cropped
  *   - encodes mp4 (H.264) and webm (VP8) plus a poster still
  *

@@ -15,7 +15,7 @@ export default function Services() {
         <SectionHeading
           eyebrow="Services"
           title="Six stages, one continuous pipeline"
-          lede="Commission the whole workflow or any single stage. Systems already equilibrated elsewhere are welcome — we will validate them before production."
+          lede="Commission the whole workflow or any single stage. Systems already equilibrated elsewhere are welcome, we will validate them before production."
         />
 
         <div className="section-body grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -58,7 +58,7 @@ export default function Services() {
             <p className="text-[0.9375rem] text-[var(--body)]">
               Not sure which stages your project needs?{" "}
               <span className="text-muted">
-                Send the structure and your research question — we will scope it
+                Send the structure and your research question, we will scope it
                 for you.
               </span>
             </p>

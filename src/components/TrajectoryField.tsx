@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 /**
  * Ambient hero backdrop: a thin slab of "solvent" particles drifting with
- * periodic boundaries, bonded to near neighbours. Deliberately low contrast —
+ * periodic boundaries, bonded to near neighbours. Deliberately low contrast -
  * it should read as texture behind the headline, never compete with it.
  */
 export default function TrajectoryField({ className = "" }: { className?: string }) {

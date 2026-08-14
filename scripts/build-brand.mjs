@@ -2,7 +2,7 @@
  * Brand assets from the BioPC logo.
  *
  * The source is a JPEG (opaque white background) of a circular badge, so the
- * corners are trimmed away and a circular alpha mask is applied — otherwise
+ * corners are trimmed away and a circular alpha mask is applied, otherwise
  * the white square corners show against the page.
  */
 import sharp from "sharp";
@@ -37,7 +37,7 @@ const round = await sharp(square)
 await sharp(round).webp({ quality: 95 }).toFile(path.join(BRAND, "logo.webp"));
 await sharp(round).png().toFile(path.join(BRAND, "logo.png"));
 
-// Apple touch icons must be opaque — iOS composites them on black otherwise.
+// Apple touch icons must be opaque, iOS composites them on black otherwise.
 await sharp(square)
   .resize(180, 180)
   .flatten({ background: "#ffffff" })

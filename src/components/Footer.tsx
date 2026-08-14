@@ -30,7 +30,7 @@ export default function Footer() {
           </div>
           <p className="lede mt-5 max-w-sm text-[0.9375rem]">
             GPU-accelerated molecular dynamics for research groups, thesis
-            students and drug discovery teams — from system setup through to
+            students and drug discovery teams, from system setup through to
             manuscript-ready figures.
           </p>
           <p className="mt-5 font-display text-lg italic text-[var(--body)]">
