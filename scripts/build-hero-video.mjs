@@ -32,8 +32,8 @@ const FFMPEG =
 const SRC = path.resolve(process.cwd(), "assets/hero-source.mp4");
 const OUTDIR = path.resolve(process.cwd(), "public/video");
 
-const W = 1600;
-const H = 900;
+const W = 1280;
+const H = 720;
 const SCALE = `scale=${W}:${H}:flags=lanczos`;
 
 function run(args, { collect = false } = {}) {
@@ -80,7 +80,7 @@ await run([
   "-y", "-i", SRC,
   "-vf", SCALE,
   "-an",
-  "-c:v", "libopenh264", "-b:v", "2600k",
+  "-c:v", "libopenh264", "-b:v", "1150k",
   "-pix_fmt", "yuv420p",
   "-movflags", "+faststart",
   path.join(OUTDIR, "biopc-md-reel.mp4"),
@@ -92,7 +92,7 @@ await run([
   "-y", "-i", SRC,
   "-vf", SCALE,
   "-an",
-  "-c:v", "libvpx", "-b:v", "1900k", "-crf", "31",
+  "-c:v", "libvpx", "-b:v", "980k", "-crf", "33",
   "-qmin", "4", "-qmax", "48",
   "-pix_fmt", "yuv420p",
   path.join(OUTDIR, "biopc-md-reel.webm"),
